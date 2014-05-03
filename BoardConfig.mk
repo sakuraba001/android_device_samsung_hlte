@@ -121,9 +121,11 @@ MAX_EGL_CACHE_KEY_SIZE := 12*1024
 MAX_EGL_CACHE_SIZE := 2048*1024
 
 # Assert
-TARGET_OTA_ASSERT_DEVICE := hltexx,hltespr,hltetmo,SM-N900T,hltecan,hlteatt,hltevzw,hlte,hltekdi
+TARGET_OTA_ASSERT_DEVICE := hltexx,hltespr,hltetmo,SM-N900T,hltecan,hlteatt,hltevzw,hlte,hltekdi,scl22
 
-TARGET_KERNEL_VARIANT_CONFIG := msm8974_sec_hlte_eur_defconfig
+# Kernel
+TARGET_KERNEL_VARIANT_CONFIG := msm8974_sec_hlte_kdi_defconfig
+TARGET_KERNEL_DTS_FILES := msm8974-sec-hltejpn
 
 # PowerHAL
 TARGET_POWERHAL_VARIANT := qcom
