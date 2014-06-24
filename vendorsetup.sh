@@ -1,2 +1,2 @@
-add_lunch_combo cm_js01ltedcm-eng
+add_lunch_combo cm_js01lte-eng
 

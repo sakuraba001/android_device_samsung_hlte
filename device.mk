@@ -20,7 +20,7 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
 $(call inherit-product-if-exists, vendor/samsung/js01lte/js01lte-vendor.mk)
 
 ## overlays
-DEVICE_PACKAGE_OVERLAYS += device/samsung/js01ltedcm/overlay
+DEVICE_PACKAGE_OVERLAYS += device/samsung/js01lte/overlay
 
 # Device uses high-density artwork where available
 PRODUCT_AAPT_CONFIG := normal hdpi xhdpi xxhdpi
@@ -32,9 +32,9 @@ TARGET_SCREEN_WIDTH := 1080
 
 # Audio configuration
 PRODUCT_COPY_FILES += \
-    device/samsung/js01ltedcm/audio/audio_effects.conf:system/vendor/etc/audio_effects.conf \
-    device/samsung/js01ltedcm/audio/mixer_paths.xml:system/etc/mixer_paths.xml \
-    device/samsung/js01ltedcm/audio/audio_policy.conf:system/etc/audio_policy.conf \
+    device/samsung/js01lte/audio/audio_effects.conf:system/vendor/etc/audio_effects.conf \
+    device/samsung/js01lte/audio/mixer_paths.xml:system/etc/mixer_paths.xml \
+    device/samsung/js01lte/audio/audio_policy.conf:system/etc/audio_policy.conf \
     frameworks/native/data/etc/android.hardware.audio.low_latency.xml:system/etc/permissions/android.hardware.audio.low_latency.xml
 
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -49,17 +49,13 @@ PRODUCT_COPY_FILES += \
 
 # Media Profile
 PRODUCT_COPY_FILES += \
-    device/samsung/js01ltedcm/media/media_profiles.xml:system/etc/media_profiles.xml
+    device/samsung/js01lte/media/media_profiles.xml:system/etc/media_profiles.xml
 
 # Extended media support
 PRODUCT_PACKAGES += \
     qcmediaplayer
 
 PRODUCT_BOOT_JARS += qcmediaplayer
-
-# support for epen
-PRODUCT_COPY_FILES += \
-    device/samsung/js01ltedcm/sec_e-pen.idc:system/usr/idc/sec_e-pen.idc
 
 # GPS
 PRODUCT_PACKAGES += \
@@ -68,21 +64,21 @@ PRODUCT_PACKAGES += \
     libloc_core \
     libloc_eng
 
-GPS_CONF := device/samsung/js01ltedcm/gps/etc/gps.conf
+GPS_CONF := device/samsung/js01lte/gps/etc/gps.conf
 
 PRODUCT_COPY_FILES += \
     $(GPS_CONF):/system/etc/gps.conf \
-    device/samsung/js01ltedcm/gps/etc/sap.conf:/system/etc/sap.conf
+    device/samsung/js01lte/gps/etc/sap.conf:/system/etc/sap.conf
 
 # Keylayouts
 PRODUCT_COPY_FILES += \
-    device/samsung/js01ltedcm/keylayout/atmel_mxt_ts.kl:system/usr/keylayout/atmel_mxt_ts.kl \
-    device/samsung/js01ltedcm/keylayout/Button_Jack.kl:system/usr/keylayout/Button_Jack.kl \
-    device/samsung/js01ltedcm/keylayout/gpio-keys.kl:system/usr/keylayout/gpio-keys.kl \
-    device/samsung/js01ltedcm/keylayout/philips_remote_ir.kl:system/usr/keylayout/philips_remote_ir.kl \
-    device/samsung/js01ltedcm/keylayout/samsung_remote_ir.kl:system/usr/keylayout/samsung_remote_ir.kl \
-    device/samsung/js01ltedcm/keylayout/sec_touchkey.kl:system/usr/keylayout/sec_touchkey.kl \
-    device/samsung/js01ltedcm/keylayout/ue_rf4ce_remote.kl:system/usr/keylayout/ue_rf4ce_remote.kl
+    device/samsung/js01lte/keylayout/atmel_mxt_ts.kl:system/usr/keylayout/atmel_mxt_ts.kl \
+    device/samsung/js01lte/keylayout/Button_Jack.kl:system/usr/keylayout/Button_Jack.kl \
+    device/samsung/js01lte/keylayout/gpio-keys.kl:system/usr/keylayout/gpio-keys.kl \
+    device/samsung/js01lte/keylayout/philips_remote_ir.kl:system/usr/keylayout/philips_remote_ir.kl \
+    device/samsung/js01lte/keylayout/samsung_remote_ir.kl:system/usr/keylayout/samsung_remote_ir.kl \
+    device/samsung/js01lte/keylayout/sec_touchkey.kl:system/usr/keylayout/sec_touchkey.kl \
+    device/samsung/js01lte/keylayout/ue_rf4ce_remote.kl:system/usr/keylayout/ue_rf4ce_remote.kl
 
 # Ramdisk
 PRODUCT_PACKAGES += \
@@ -125,7 +121,7 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.consumerir.xml:system/etc/permissions/android.hardware.consumerir.xml
 
 # Nfc
-NFCEE_ACCESS_PATH := device/samsung/js01ltedcm/nfc/nfcee_access.xml
+NFCEE_ACCESS_PATH := device/samsung/js01lte/nfc/nfcee_access.xml
 
 ifeq ($(TARGET_NFC_TECH), nxp)
 PRODUCT_PACKAGES += \
@@ -150,9 +146,9 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_COPY_FILES += \
     $(NFCEE_ACCESS_PATH):system/etc/nfcee_access.xml \
-    device/samsung/js01ltedcm/nfc/libnfc-brcm-20791b05.conf:system/etc/libnfc-brcm-20791b05.conf \
-    device/samsung/js01ltedcm/nfc/libnfc-brcm-20791b04.conf:system/etc/libnfc-brcm-20791b04.conf \
-    device/samsung/js01ltedcm/nfc/libnfc-brcm.conf:system/etc/libnfc-brcm.conf
+    device/samsung/js01lte/nfc/libnfc-brcm-20791b05.conf:system/etc/libnfc-brcm-20791b05.conf \
+    device/samsung/js01lte/nfc/libnfc-brcm-20791b04.conf:system/etc/libnfc-brcm-20791b04.conf \
+    device/samsung/js01lte/nfc/libnfc-brcm.conf:system/etc/libnfc-brcm.conf
 
 endif
 
@@ -203,8 +199,8 @@ PRODUCT_PACKAGES += \
 
 # Wifi
 PRODUCT_COPY_FILES += \
-   device/samsung/js01ltedcm/wpa_supplicant_overlay.conf:system/etc/wifi/wpa_supplicant_overlay.conf \
-   device/samsung/js01ltedcm/p2p_supplicant_overlay.conf:system/etc/wifi/p2p_supplicant_overlay.conf
+   device/samsung/js01lte/wpa_supplicant_overlay.conf:system/etc/wifi/wpa_supplicant_overlay.conf \
+   device/samsung/js01lte/p2p_supplicant_overlay.conf:system/etc/wifi/p2p_supplicant_overlay.conf
 
 # Keymaster
 PRODUCT_PACKAGES += \

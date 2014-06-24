@@ -12,8 +12,8 @@
     "target_path": "device/samsung/msm8974-common"
   },
   {
-    "repository": "android_device_samsung_js01ltedcm",
-    "target_path": "device/samsung/js01ltedcm"
+    "repository": "android_device_samsung_js01lte",
+    "target_path": "device/samsung/js01lte"
   },
    {
     "repository": "android_kernel_samsung_js01lte",
