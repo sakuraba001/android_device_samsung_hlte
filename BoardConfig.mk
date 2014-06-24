@@ -23,14 +23,14 @@
 # inherit from common msm8974
 -include device/samsung/msm8974-common/BoardConfigCommon.mk
 
-TARGET_SPECIFIC_HEADER_PATH := device/samsung/hlte/include
+TARGET_SPECIFIC_HEADER_PATH := device/samsung/js01ltedcm/include
 
 
 # Bootloader
 TARGET_BOOTLOADER_BOARD_NAME := MSM8974
 
 # Kernel Configs
-TARGET_KERNEL_SOURCE := kernel/samsung/hlte
+TARGET_KERNEL_SOURCE := kernel/samsung/js01lte
 TARGET_KERNEL_CONFIG := msm8974_sec_defconfig
 TARGET_KERNEL_SELINUX_CONFIG := selinux_defconfig
 
@@ -40,10 +40,10 @@ BOARD_KERNEL_BASE := 0x00000000
 BOARD_KERNEL_PAGESIZE := 2048
 BOARD_MKBOOTIMG_ARGS := --ramdisk_offset 0x02900000 --tags_offset 0x02700000
 BOARD_KERNEL_SEPARATED_DT := true
-BOARD_CUSTOM_BOOTIMG_MK := device/samsung/hlte/mkbootimg.mk
+BOARD_CUSTOM_BOOTIMG_MK := device/samsung/js01ltedcm/mkbootimg.mk
 
 # Graphics
-BOARD_EGL_CFG := device/samsung/hlte/egl.cfg
+BOARD_EGL_CFG := device/samsung/js01ltedcm/egl.cfg
 
 # Recovery
 TARGET_RECOVERY_PIXEL_FORMAT := "RGBX_8888"
@@ -52,7 +52,7 @@ BOARD_USES_MMCUTILS := true
 BOARD_HAS_LARGE_FILESYSTEM := true
 BOARD_HAS_NO_MISC_PARTITION := true
 BOARD_HAS_NO_SELECT_BUTTON := true
-TARGET_RECOVERY_FSTAB := device/samsung/hlte/rootdir/etc/fstab.qcom
+TARGET_RECOVERY_FSTAB := device/samsung/js01ltedcm/rootdir/etc/fstab.qcom
 
 TARGET_USERIMAGES_USE_EXT4 := true
 BOARD_BOOTIMAGE_PARTITION_SIZE := 11534336
@@ -64,8 +64,8 @@ BOARD_FLASH_BLOCK_SIZE := 131072
 BOARD_RECOVERY_SWIPE := true
 
 # bluetooth
-BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/samsung/hlte/bluetooth
-BOARD_BLUEDROID_VENDOR_CONF := device/samsung/hlte/bluetooth/vnd_hlte.txt
+BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/samsung/js01ltedcm/bluetooth
+BOARD_BLUEDROID_VENDOR_CONF := device/samsung/js01ltedcm/bluetooth/vnd_js01lte.txt
 BOARD_BLUETOOTH_USES_HCIATTACH_PROPERTY := false
 
 # NFC
@@ -75,7 +75,7 @@ BOARD_NFC_HAL_SUFFIX := msm8974
 BOARD_HAVE_NEW_QCOM_CSDCLIENT := true
 
 # Audio settings
-BOARD_USES_CUSTOM_AUDIO_PLATFORM_PATH := device/samsung/hlte/audio/platform
+BOARD_USES_CUSTOM_AUDIO_PLATFORM_PATH := device/samsung/js01ltedcm/audio/platform
 AUDIO_FEATURE_DISABLED_MULTI_VOICE_SESSIONS := true
 AUDIO_FEATURE_DISABLED_FM := true
 AUDIO_FEATURE_DISABLED_ANC_HEADSET := true
@@ -106,14 +106,14 @@ MAX_EGL_CACHE_KEY_SIZE := 12*1024
 MAX_EGL_CACHE_SIZE := 2048*1024
 
 # Assert
-TARGET_OTA_ASSERT_DEVICE := hltexx,hltespr,hltetmo,SM-N900T,hltecan,hlteatt,hltevzw,hlteusc,hlte,hltekdi,scl22,SCL22,hltedcm,sc-01f,SC-01F
+TARGET_OTA_ASSERT_DEVICE := js01ltedcm,js01lte,SC02F
 
 # Kernel
-TARGET_KERNEL_VARIANT_CONFIG := msm8974_sec_hlte_eur_defconfig
+TARGET_KERNEL_VARIANT_CONFIG := msm8974_sec_js01ltedcm_defconfig
 
 # PowerHAL
 TARGET_POWERHAL_VARIANT := qcom
-TARGET_POWERHAL_SET_INTERACTIVE_EXT := device/samsung/hlte/power/power_ext.c
+TARGET_POWERHAL_SET_INTERACTIVE_EXT := device/samsung/js01ltedcm/power/power_ext.c
 
 # Consumerir
 TARGET_PROVIDES_CONSUMERIR_HAL := true
@@ -124,6 +124,6 @@ TARGET_NO_RPC := true
 # Vendor Init
 TARGET_UNIFIED_DEVICE := true
 TARGET_INIT_VENDOR_LIB := libinit_msm
-TARGET_LIBINIT_DEFINES_FILE := device/samsung/hlte/init/init_hlte.c
+TARGET_LIBINIT_DEFINES_FILE := device/samsung/js01ltedcm/init/init_js01lte.c
 
-TARGET_RELEASETOOLS_EXTENSIONS := device/samsung/hlte
+TARGET_RELEASETOOLS_EXTENSIONS := device/samsung/js01ltedcm

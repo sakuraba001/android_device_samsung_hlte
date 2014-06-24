@@ -14,16 +14,8 @@
 # limitations under the License.
 #
 
-"""Custom OTA commands for hlte devices"""
+"""Custom OTA commands for js01lte devices"""
 
 def FullOTA_InstallEnd(info):
-  info.script.AppendExtra('ifelse(is_substring("N900T", getprop("ro.bootloader")), run_program("/sbin/sh", "-c", "busybox cp /system/lib/gsm/* /system/lib/"));')
-  info.script.AppendExtra('ifelse(is_substring("N9005", getprop("ro.bootloader")), run_program("/sbin/sh", "-c", "busybox cp /system/lib/gsm/* /system/lib/"));')
-  info.script.AppendExtra('ifelse(is_substring("N900W", getprop("ro.bootloader")), run_program("/sbin/sh", "-c", "busybox cp /system/lib/gsm/* /system/lib/"));')
-  info.script.AppendExtra('ifelse(is_substring("N900V", getprop("ro.bootloader")), run_program("/sbin/sh", "-c", "busybox cp /system/lib/cdma/* /system/lib/"));')
-  info.script.AppendExtra('ifelse(is_substring("N900P", getprop("ro.bootloader")), run_program("/sbin/sh", "-c", "busybox cp /system/lib/cdma/* /system/lib/"));')
-  info.script.AppendExtra('ifelse(is_substring("N900R4", getprop("ro.bootloader")), run_program("/sbin/sh", "-c", "busybox cp /system/lib/cdma/* /system/lib/"));')
-  info.script.AppendExtra('ifelse(is_substring("SCL22", getprop("ro.bootloader")), run_program("/sbin/sh", "-c", "busybox cp /system/lib/cdma/* /system/lib/"));')
-  info.script.AppendExtra('ifelse(is_substring("SC-01F", getprop("ro.bootloader")), run_program("/sbin/sh", "-c", "busybox cp /system/lib/gsm/* /system/lib/"));')
+  info.script.AppendExtra('ifelse(is_substring("SC02F", getprop("ro.bootloader")), run_program("/sbin/sh", "-c", "busybox cp /system/lib/gsm/* /system/lib/"));')
   info.script.AppendExtra('delete_recursive("/system/lib/gsm/");')
-  info.script.AppendExtra('delete_recursive("/system/lib/cdma/");')
