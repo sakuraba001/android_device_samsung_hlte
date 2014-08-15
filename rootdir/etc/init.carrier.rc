@@ -15,11 +15,6 @@ on boot
     chown system radio /sys/class/sec/sec_touchkey/boost_level
 
 # permission for Input Device(Wacom).
-    chmod 0660 /sys/class/input/input4/enabled
-    chown system system /sys/class/input/input4/enabled
-    chown system system /sys/class/input/input18/enabled
-
-# permissions for S-Pen
     chmod 0660 /sys/class/input/input3/enabled
     chown system system /sys/class/input/input3/enabled
     chown system radio /sys/class/sec/sec_epen/epen_firm_update
@@ -31,7 +26,7 @@ on boot
     chown system radio /sys/class/sec/sec_epen/epen_checksum_result
     chown system radio /sys/class/sec/sec_epen/epen_saving_mode
     chown system radio /sys/class/sec/sec_epen/boost_level
-
+    
 # permissions for bluetooth.
     setprop ro.bt.bdaddr_path "/efs/bluetooth/bt_addr"
     chown bluetooth net_bt_stack ro.bt.bdaddr_path
@@ -71,13 +66,13 @@ on fs
 # bluetooth dhcp config
 service dhcpcd_bt-pan /system/bin/dhcpcd -ABKL
     class main
- disabled
- oneshot
+    disabled
+    oneshot
 
 service iprenew_bt-pan /system/bin/dhcpcd -n
     class late_start
- disabled
- oneshot
+    disabled
+    oneshot
 
 # service for TZPR provisioning version check app
 service scranton_RD /system/bin/scranton_RD

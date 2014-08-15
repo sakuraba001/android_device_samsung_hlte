@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #set -e
-export DEVICE=js01lte
+export DEVICE=hlte
 export VENDOR=samsung
 
 if [ $# -eq 0 ]; then
