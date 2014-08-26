@@ -55,10 +55,10 @@ void init_msm_properties(unsigned long msm_id, unsigned long msm_ver, char *boar
     property_get("ro.bootloader", bootloader);
 
     if (strstr(bootloader, "SC02F")) {
-        /* hltejs01dcm */
+        /* js01dcm */
         gsm_properties();
         property_set("ro.build.fingerprint", "samsung/SC-02F/SC-02F:4.4.2/KOT49H/SC02FOMUFNF7:user/release-keys");
-        property_set("ro.build.description", "hltejs01dcm-user 4.4.2 KOT49H SC02FOMUFNF7 release-keys");
+        property_set("ro.build.description", "js01dcm-user 4.4.2 KOT49H SC02FOMUFNF7 release-keys");
         property_set("ro.product.model", "SC-02F");
         property_set("ro.product.device", "SC-02F");
     }
