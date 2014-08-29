@@ -55,7 +55,7 @@ void init_msm_properties(unsigned long msm_id, unsigned long msm_ver, char *boar
     property_get("ro.bootloader", bootloader);
 
     if (strstr(bootloader, "SC02F")) {
-        /* js01dcm */
+         /* js01dcm */
         gsm_properties();
         property_set("ro.build.fingerprint", "samsung/SC-02F/SC-02F:4.4.2/KOT49H/SC02FOMUFNF7:user/release-keys");
         property_set("ro.build.description", "js01dcm-user 4.4.2 KOT49H SC02FOMUFNF7 release-keys");
@@ -70,6 +70,5 @@ void init_msm_properties(unsigned long msm_id, unsigned long msm_ver, char *boar
 void gsm_properties()
 {
     property_set("ro.telephony.default_network", "9");
-    property_set("ro.telephony.ril.v3", "newDialCode");
     property_set("telephony.lteOnGsmDevice", "1");
 }
