@@ -36,6 +36,8 @@
 
 #include "init_msm.h"
 
+void gsm_properties();
+
 void init_msm_properties(unsigned long msm_id, unsigned long msm_ver, char *board_type)
 {
     char platform[PROP_VALUE_MAX];
